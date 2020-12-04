@@ -26,13 +26,16 @@ body {
   justify-content: center;
   align-items: center;
   color: white;
-  grid-template-columns: repeat(4, 80px);
-  grid-template-rows: minmax(50px, auto) repeat(5, 70px);
+  grid-template-columns: repeat(4, 60px);
+  grid-template-rows: minmax(40px, auto) repeat(5, 50px);
   background-color: #e0e3da;
   border-radius: 10px;
+  margin: 0 auto;
+  width: 20rem;
 }
 
 .calculator button {
+  display: inline;
   cursor: pointer;
   font-size: 2rem;
   outline: none;
@@ -41,7 +44,7 @@ body {
 
 .calculator button:hover {
   transition: 0.5s ease;
-  background-color: #a593e0;
+  background-color: rgb(241, 241, 241);
 }
 
 .big-btn {
