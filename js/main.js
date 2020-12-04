@@ -58,14 +58,16 @@ class Calculator {
   }
 
   getDisplayNumber(number) {
-    return number;
+    const floatNumber = parseFloat(number);
+    if (isNaN(floatNumber)) return '';
+    return floatNumber.toLocaleString('en');
   }
 
   updateDisplay() {
     this.currentNumElement.innerText = this.getDisplayNumber(this.currentNum);
     if (this.operation != null) {
       this.typedNumElement.innerText = `${this.getDisplayNumber(
-        this.typedNum
+        this.typedNumElement
       )} ${this.operation}`;
     }
   }
