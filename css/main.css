@@ -5,7 +5,67 @@
 body {
   padding: 0;
   margin: 0;
-  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(0, 0, 0, 0.15) 100%
+    ),
+    radial-gradient(
+        at top center,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(0, 0, 0, 0.4) 120%
+      )
+      #989898;
+  background-blend-mode: multiply, multiply;
+  font-family: 'Poppins', sans-serif;
+}
+
+.calculator {
+  display: grid;
   justify-content: center;
   align-items: center;
+  color: white;
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: minmax(50px, auto) repeat(5, 70px);
+  background-color: #e0e3da;
+  border-radius: 10px;
+}
+
+.calculator button {
+  cursor: pointer;
+  font-size: 2rem;
+  outline: none;
+  background-color: #fffff3;
+}
+
+.calculator button:hover {
+  transition: 0.5s ease;
+  background-color: #a593e0;
+}
+
+.big-btn {
+  grid-column: span 2;
+}
+
+.output-box {
+  grid-column: 1 / -1;
+  background-color: #566270;
+  height: 5rem;
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output-box .typed-num {
+  font-size: 1.5rem;
+}
+
+.output-box .current-num {
+  font-size: 2rem;
 }

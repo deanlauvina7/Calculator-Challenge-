@@ -4,15 +4,39 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Calculator</title>
-		<link rel="stylesheet" href="./css/sales">
 		<link rel="stylesheet" href="./css/salesforce-lightning-design-system.css">
 		<link rel="stylesheet" href="./css/main.css">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 	</head>
 
 	<body class="slds-p-around_x-large">
 		<div class="slds-container slds-container_center slds-container_small">
-			Build your calculator component here.
+			<div class="calculator">
+				<div class="output-box">
+					<div data-typed-num class="typed-num"></div>
+					<div data-current-num class="current-num"></div>
+				</div>
+				<button data-all-clear class="slds-button big-btn">AC</button>
+				<button data-delete class="slds-button">DEL</button>
+				<button data-operation class="slds-button">&#247;</button>
+				<button data-number class="slds-button">1</button>
+				<button data-number class="slds-button">2</button>
+				<button data-number class="slds-button">3</button>
+				<button data-operation class="slds-button">*</button>
+				<button data-number class="slds-button">4</button>
+				<button data-number class="slds-button">5</button>
+				<button data-number class="slds-button">6</button>
+				<button data-operation class="slds-button">+</button>
+				<button data-number class="slds-button">7</button>
+				<button data-number class="slds-button">8</button>
+				<button data-number class="slds-button">9</button>
+				<button data-operation class="slds-button">-</button>
+				<button data-number class="slds-button">.</button>
+				<button data-number class="slds-button">0</button>
+				<button data-equals class="slds-button big-btn">=</button>
+			</div>
 		</div>
+
 		<script type="text/javascript" src="./js/main.js"></script>
 	</body>
 
