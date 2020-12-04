@@ -11,7 +11,9 @@ class Calculator {
     this.operation = undefined;
   }
 
-  delete() {}
+  delete() {
+    this.currentNum = this.currentNum.toString().slice(0, -1);
+  }
 
   appendNum(number) {
     if (number === '.' && this.currentNum.includes('.')) return;
@@ -19,17 +21,53 @@ class Calculator {
   }
 
   chooseOperation(operation) {
+    if (this.currentNum === '') return;
+    if (this.typedNum !== '') {
+      this.compute();
+    }
     this.operation = operation;
     this.typedNum = this.currentNum;
     this.currentNum = '';
   }
 
-  compute() {}
+  compute() {
+    let computation;
+    const prev = parseFloat(this.typedNum);
+    const current = parseFloat(this.currentNum);
+    if (isNaN(prev) || isNaN(current)) return;
+    switch (this.operation) {
+      case '+':
+        computation = prev + current;
+        break;
+      case '-':
+        computation = prev - current;
+        break;
+      case '*':
+        computation = prev * current;
+        break;
+      case '&#247;':
+        computation = prev / current;
+        break;
+
+      default:
+        return;
+    }
+    this.currentNum = computation;
+    this.operation = undefined;
+    this.typedNum = '';
+  }
+
+  getDisplayNumber(number) {
+    return number;
+  }
 
   updateDisplay() {
-    this.currentNumElement.innerText = this.currentNum;
-    this.typedNumElement.innerText = this.typedNum;
-    this.currentNumElement.innerText = this.currentNum;
+    this.currentNumElement.innerText = this.getDisplayNumber(this.currentNum);
+    if (this.operation != null) {
+      this.typedNumElement.innerText = `${this.getDisplayNumber(
+        this.typedNum
+      )} ${this.operation}`;
+    }
   }
 }
 
@@ -55,4 +93,19 @@ operationBtns.forEach((button) => {
     calculator.chooseOperation(button.innerText);
     calculator.updateDisplay();
   });
+});
+
+equalsBtn.addEventListener('click', (button) => {
+  calculator.compute();
+  calculator.updateDisplay();
+});
+
+allClearBtn.addEventListener('click', (button) => {
+  calculator.clear();
+  calculator.updateDisplay();
+});
+
+deleteBtn.addEventListener('click', (button) => {
+  calculator.delete();
+  calculator.updateDisplay();
 });
