@@ -82,6 +82,8 @@ class Calculator {
       this.typedNumElement.innerText = `${this.getDisplayNumber(
         this.typedNumElement
       )} ${this.operation}`;
+    } else {
+      this.typedNumElement.innerText = '';
     }
   }
 }
