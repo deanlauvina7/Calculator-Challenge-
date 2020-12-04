@@ -27,7 +27,7 @@ body {
   align-items: center;
   color: white;
   grid-template-columns: repeat(4, 60px);
-  grid-template-rows: minmax(40px, auto) repeat(5, 50px);
+  grid-template-rows: minmax(20px, auto) repeat(5, 40px);
   background-color: #e0e3da;
   border-radius: 10px;
   margin: 0 auto;
